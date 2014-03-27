@@ -27,27 +27,36 @@ $(document).ready(function() {
 });
 
 function checkWin(board) {
-    //Check rows
-    for (var row = 0; row < board.length; row++) {
-        if (true && board[row][0].status && board[row][1].status && board[row][2].status && board[row][3].status && board[row][4].status) {
+    for (var i = 0; i < board.length; i++) {
+        //Check rows
+        if (checkVal([board[i][0].status, board[i][1].status, board[i][2].status, board[i][3].status, board[i][4].status])) {
+            return true;
+        }
+        //Check column
+        if (checkVal([board[0][i].status, board[1][i].status, board[2][i].status, board[3][i].status, board[4][i].status])) {
             return true;
         }
     }
-    //Check columns
-    for (var col = 0; col < board.length; col++) {
-        if (true && board[0][col].status && board[1][col].status && board[2][col].status && board[3][col].status && board[4][col].status) {
-            return true;
-        }
+    if (checkDiag(board)) {
+        return true;
     }
-    //Check Diagonal
     return false;
 }
 
-function checkVals(vals) {
-    for (var value in vals) {
-        if (value === false) {
+function checkDiag(board) {
+    var forward = [];
+    var backward = [];
+    for (var row = 0; row < board.length; row++) {
+        forward.push(board[row][row].status);
+        backward.push(board[row][board.length - row - 1].status);
+    }
+    return checkVal(forward) || checkVal(backward);
+}
+
+function checkVal(values) {
+    for (var i in values) {
+        if (values[i] === false)
             return false;
-        }
     }
     return true;
 }
@@ -63,3 +72,31 @@ function shuffle(o) {
     for (var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
     return o;
 }
+
+/*
+testing data:
+board[0][1].status = true;
+board[1][1].status = true;
+board[2][1].status = true;
+board[3][1].status = true;
+board[4][1].status = true;
+
+
+board[1][0].status = true;
+board[1][1].status = true;
+board[1][2].status = true;
+board[1][3].status = true;
+board[1][4].status = true;
+
+board[0][0].status = true;
+board[1][1].status = true;
+board[2][2].status = true;
+board[3][3].status = true;
+board[4][4].status = true;
+
+board[0][4].status = true;
+board[1][3].status = true;
+board[2][2].status = true;
+board[3][1].status = true;
+board[4][0].status = true;
+*/
