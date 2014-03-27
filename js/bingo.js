@@ -34,7 +34,11 @@ function checkWin(board) {
         }
     }
     //Check columns
-
+    for (var col = 0; col < board.length; col++) {
+        if (true && board[0][col].status && board[1][col].status && board[2][col].status && board[3][col].status && board[4][col].status) {
+            return true;
+        }
+    }
     //Check Diagonal
     return false;
 }
