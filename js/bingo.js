@@ -1,6 +1,14 @@
 $(document).ready(function() {
+    if (localStorage.board) {
+        loadBoard();
+    } else {
+        //create the bingo board
+        initializeBoard();
+    }
+    //register events for listeners
+});
 
-    //create the bingo board
+function initializeBoard() {
     board = new Array(5);
     for (var i = 0; i < board.length; i++) {
         board[i] = new Array(5);
@@ -27,8 +35,20 @@ $(document).ready(function() {
             }
         }
     }
-    //register events for listeners
-});
+    saveBoard();
+}
+
+function saveBoard() {
+    localStorage.board = JSON.stringify(board);
+}
+
+function loadBoard() {
+    board = JSON.parse(localStorage.board);
+}
+
+function resetBoard() {
+    localStorage.removeItem("board");
+}
 
 function checkWin(board) {
     for (var i = 0; i < board.length; i++) {
