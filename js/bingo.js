@@ -6,9 +6,13 @@ $(document).ready(function() {
         board[i] = new Array(5);
     }
 
-    var wordList = shuffle(["one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten",
-        "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen", "twenty",
-        "twenty-one", "twenty-two", "twenty-three", "twenty-four"
+    var wordList = shuffle(["What?","Does that work?","That didn’t work.","Really!?",
+    "At the end of the day…","That’s ridiculous!","Ruby/Rails is awesome.",
+    "Whomp whomp.","Tada!","_____ is making my head explode","Any questions?",
+    "Stupid programmers.","Good job!","This is so cool!","Avi dismisses a question",
+    "Avi forgets to turn on join.me/record.","Avi’s hipchat window pops up",
+    "Avi Curses","Avi asks Logan a question","Does that work?","That didn’t work.",
+    "Really!?","At the end of the day…","That’s ridiculous!","What?"
     ]);
 
     //Iterate through the wordlist to load the board
@@ -71,6 +75,17 @@ function createCell(newtext) {
 function shuffle(o) {
     for (var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
     return o;
+}
+
+function toStatusString(){
+    var status = "";
+    for (var row = 0; row < board.length; row++) {
+        for (var col = 0; col < board[0].length; col++) {
+            status += "["+board[row][col].status+"]"
+        }
+        status += "\n"
+    }
+    return status;
 }
 
 /*
