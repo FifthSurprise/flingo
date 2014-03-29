@@ -1,15 +1,31 @@
 $(document).ready(function(){
-  
-
-
-
-  // For testing only ************************************
-  // initializeBoard();
-
   initializeBoardView();
+  updateBoardView();
+
+  $(".cell").on('click',function(e){
+    row = $(e.target).closest(".cell").data().row;
+    col = $(e.target).closest(".cell").data().col;
+    toggleStatus(row,col);
+    updateCellView(row,col);
+  });
 
   // **********************************************
 });
+
+function updateBoardView(){
+  for(var x = 0;x<5;x++){
+    for(var y=0;y<5;y++){
+      updateCellView(x,y)
+    }
+  }
+}
+
+function updateCellView(row,col){
+  if (board[row][col].status)
+    getCell(row,col).addClass("active")
+  else 
+   getCell(row,col).removeClass("active")
+}
 
 function initializeBoardView(){
   for(var x = 0;x<5;x++){

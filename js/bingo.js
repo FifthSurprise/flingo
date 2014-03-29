@@ -97,6 +97,11 @@ function shuffle(o) {
     return o;
 }
 
+function toggleStatus(row,col){
+    console.log(row+" "+col);
+    board[row][col].status = !board[row][col].status
+}
+
 function toStatusString(){
     var status = "";
     for (var row = 0; row < board.length; row++) {
