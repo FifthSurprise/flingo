@@ -1,13 +1,16 @@
 #board {
-  border:solid 1px red;
-  display: inline-block;
-  margin:0 auto;
+}
+
+.container{
+  margin-right: auto;
+  margin-left: auto;
+  width: 600px;
 }
 
 .row {
   /*width: 500px;*/
   height: 100px;
-  clear:left;
+  /*clear:left;*/
   /*margin-bottom: 5px;*/
   /*display: table-row;*/
 }
@@ -22,18 +25,35 @@
   margin-bottom:5px;
   /*display: inline-block;*/
   /*display: table-cell;*/
-  font-size:125%;
+  font-size:14px;
   font-family: sans-serif;
   text-align: center;
   overflow:hidden;
+  padding:2px;
 }
 
 .cell.active {
   color:green;
 }
 
-.cell span{ 
+.cell p{
+  height:100px;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
 }
+
+span.small{ 
+}
+
+span.big{
+
+}
+
+.wrap{
+  display: inline-block;
+}
+
 
 .button{
   display: inline-block;

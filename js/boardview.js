@@ -30,7 +30,7 @@ function updateCellView(row,col){
 function initializeBoardView(){
   for(var x = 0;x<5;x++){
     for(var y=0;y<5;y++){
-      getCell(x,y).append("<span>"+board[x][y].text+"</span>");
+      getCell(x,y).append("<div class=\"wrap\"><p>"+board[x][y].text+"</p></div>");
     }
   } 
 }
