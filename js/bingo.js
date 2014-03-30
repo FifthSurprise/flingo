@@ -14,13 +14,13 @@ function initializeBoard() {
         board[i] = new Array(5);
     }
 
-    var wordList = shuffle(["What?","Does that work?","That didn’t work.","Really!?",
-    "At the end of the day…","That’s ridiculous!","Ruby/Rails is awesome.",
-    "Whomp whomp.","Tada!","_____ is making my head explode","Any questions?",
-    "Stupid programmers.","Good job!","This is so cool!","Avi dismisses a question",
-    "Avi forgets to turn on join.me/record.","Avi’s hipchat window pops up",
-    "Avi Curses","Avi asks Logan a question","Does that work?","That didn’t work.",
-    "Really!?","At the end of the day…","That’s ridiculous!","What?"
+    var wordList = shuffle(["What?", "Does that work?", "That didn’t work.", "Really!?",
+        "At the end of the day…", "That’s ridiculous!", "Ruby/Rails is awesome.",
+        "Whomp whomp.", "Tada!", "_____ is making my head explode", "Any questions?",
+        "Stupid programmers.", "Good job!", "This is so cool!", "Avi dismisses a question",
+        "Avi forgets to turn on join.me/record.", "Avi’s hipchat window pops up",
+        "Avi Curses", "Avi asks Logan a question", "Does that work?", "That didn’t work.",
+        "Really!?", "At the end of the day…", "That’s ridiculous!", "What?"
     ]);
 
     //Iterate through the wordlist to load the board
@@ -97,15 +97,16 @@ function shuffle(o) {
     return o;
 }
 
-function toggleStatus(row,col){
+function toggleStatus(row, col) {
     board[row][col].status = !board[row][col].status
+    saveBoard();
 }
 
-function toStatusString(){
+function toStatusString() {
     var status = "";
     for (var row = 0; row < board.length; row++) {
         for (var col = 0; col < board[0].length; col++) {
-            status += "["+board[row][col].status+"]"
+            status += "[" + board[row][col].status + "]"
         }
         status += "\n"
     }
