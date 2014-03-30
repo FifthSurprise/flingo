@@ -98,7 +98,6 @@ function shuffle(o) {
 }
 
 function toggleStatus(row,col){
-    console.log(row+" "+col);
     board[row][col].status = !board[row][col].status
 }
 

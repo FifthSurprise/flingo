@@ -7,10 +7,16 @@ $(document).ready(function(){
     col = $(e.target).closest(".cell").data().col;
     toggleStatus(row,col);
     updateCellView(row,col);
+    notifyWin();
   });
-
-  // **********************************************
 });
+
+function notifyWin(){
+  if(checkWin(board)){
+    console.log("holy cow you won!");
+  }
+}
+
 
 function updateBoardView(){
   for(var x = 0;x<5;x++){
