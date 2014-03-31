@@ -14,7 +14,8 @@ $(document).ready(function(){
 
 function notifyWin(){
   if(checkWin(board)){
-    console.log("holy cow you won!");
+    talk("Holy cow you won!")
+    return window.setTimeout(function(){resetBoard(); location.reload();}, 1000)
   }
 }
 
