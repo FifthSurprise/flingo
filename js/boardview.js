@@ -5,6 +5,7 @@ $(document).ready(function(){
   $(".cell").on('click',function(e){
     row = $(e.target).closest(".cell").data().row;
     col = $(e.target).closest(".cell").data().col;
+    talk($(e.target).text())
     toggleStatus(row,col);
     updateCellView(row,col);
     notifyWin();

@@ -113,6 +113,24 @@ function toStatusString() {
     return status;
 }
 
+function talk(phrase){
+    var $avi = $('div.talker div.avi'),
+        $bubble = $('div.talker p.speech'),
+        timer = phrase.split(/\s/).length * 250;
+    $avi.addClass("talking");
+    $bubble.addClass("talking")
+    $bubble.empty()
+    $bubble.html(phrase)
+
+    return window.setTimeout(clearAnim, timer)
+}
+
+function clearAnim(){
+    var $bubble = $('div.talker p.speech');   
+    $(".talking").removeClass("talking") 
+    return $bubble.empty()
+}
+
 /*
 testing data:
 board[0][1].status = true;
