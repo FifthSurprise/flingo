@@ -17,9 +17,9 @@ function initializeBoard() {
     var wordList = shuffle(["What?", "Does that work?", "That didn’t work.", "Really!?",
         "At the end of the day…", "That’s ridiculous!", "Ruby/ Rails is awesome.",
         "Whomp whomp.", "Tada!", "_____ is making my head explode", "Any questions?",
-        "Stupid programmers.", "Good job!", "This is so cool!", "Avi dismisses a question for later",
-        "Avi forgets to turn on join.me/ record.", "Avi’s hipchat window pops up",
-        "Avi Curses", "Avi asks Logan a question", "Does that work?", "That didn’t work.",
+        "Stupid programmers.", "Good job!", "This is so cool!", "Dismissing a question for later",
+        "Forgot to turn on join.me/ record.", "My hipchat window pops up",
+        "Shit/Fuck", "Asking Logan a question", "Does that work?", "That didn’t work.",
         "Really!?", "At the end of the day…", "That’s ridiculous!", "What?"
     ]);
 
