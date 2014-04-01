@@ -1,4 +1,10 @@
 #board {
+  clear:both;
+}
+
+#reset-button{
+  float: right;
+  margin-right: 70px;
 }
 
 div.talker{

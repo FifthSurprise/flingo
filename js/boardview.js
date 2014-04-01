@@ -10,12 +10,18 @@ $(document).ready(function(){
     updateCellView(row,col);
     notifyWin();
   });
+
+  $("#reset-button").on("click",function(){
+    resetBoard();
+    location.reload();
+  });
 });
 
 function notifyWin(){
   if(checkWin(board)){
     talk("Holy cow you won!")
-    return window.setTimeout(function(){resetBoard(); location.reload();}, 1000)
+    $(".cell").off();
+    // return window.setTimeout(function(){resetBoard(); location.reload();}, 1000)
   }
 }
 
