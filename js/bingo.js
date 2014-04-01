@@ -17,7 +17,7 @@ function initializeBoard() {
     var wordList = shuffle(["What?", "Does that work?", "That didn’t work.", "Really!?",
         "At the end of the day…", "That’s ridiculous!", "Ruby/ Rails is awesome.",
         "Whomp whomp.", "Tada!", "_____ is making my head explode", "Any questions?",
-        "Stupid programmers.", "Good job!", "This is so cool!", "Avi dismisses a question",
+        "Stupid programmers.", "Good job!", "This is so cool!", "Avi dismisses a question for later",
         "Avi forgets to turn on join.me/ record.", "Avi’s hipchat window pops up",
         "Avi Curses", "Avi asks Logan a question", "Does that work?", "That didn’t work.",
         "Really!?", "At the end of the day…", "That’s ridiculous!", "What?"
@@ -113,7 +113,7 @@ function toStatusString() {
     return status;
 }
 
-function talk(phrase){
+function talk(phrase) {
     var $avi = $('div.talker div.avi'),
         $bubble = $('div.talker p.speech'),
         timer = phrase.split(/\s/).length * 350;
@@ -125,9 +125,9 @@ function talk(phrase){
     return window.setTimeout(clearAnim, timer)
 }
 
-function clearAnim(){
-    var $bubble = $('div.talker p.speech');   
-    $(".talking").removeClass("talking") 
+function clearAnim() {
+    var $bubble = $('div.talker p.speech');
+    $(".talking").removeClass("talking")
     return $bubble.empty()
 }
 
